@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - DATABASE_URL=postgres://postgres:password@db:5432/mydatabase
+      - AWS_REGION=us-east-1
+      # Se recomienda gestionar las credenciales de AWS de forma segura,
+      # por ejemplo, usando un archivo .env o roles de IAM.
+      # - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      # - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+    depends_on:
+      - db
+    volumes:
+      # Monta el código fuente local en el contenedor para desarrollo en tiempo real.
+      # Para producción, es mejor no usar volúmenes y construir una imagen inmutable.
+      - ./src:/usr/src/app/src
+    command: npm run start # En desarrollo, usamos ts-node para reiniciar automáticamente.
+
+  db:
+    image: postgres:14-alpine
+    environment:
+      - POSTGRES_DB=mydatabase
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
