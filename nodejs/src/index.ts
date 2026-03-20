@@ -1,21 +1,28 @@
 import express, { Request, Response } from 'express';
 import cors from 'cors';
-
 import apiRoutes from './api/routes';
+import { connectDB } from './config/database';
 
-const app = express();
-const port = process.env.PORT || 3000;
+const startServer = async () => {
+  // Conectar a la base de datos
+  await connectDB();
 
-app.use(cors());
-app.use(express.json());
+  const app = express();
+  const port = process.env.PORT || 3000;
 
-// API Routes
-app.use('/api', apiRoutes);
+  app.use(cors());
+  app.use(express.json());
 
-app.get('/', (req: Request, res: Response) => {
-  res.send('Hello, World!');
-});
+  // API Routes
+  app.use('/api', apiRoutes);
 
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
+  app.get('/', (req: Request, res: Response) => {
+    res.send('Hello, World!');
+  });
+
+  app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+  });
+};
+
+startServer();
