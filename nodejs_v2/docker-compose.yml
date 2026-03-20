@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: awsaidb-microservice
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    environment:
+      # Sobrescribe el entorno a desarrollo cuando se ejecuta con docker-compose up
+      - NODE_ENV=development 
+    volumes:
+      # Montar las credenciales locales de AWS (Opcional, muy útil si no pones AWS_ACCESS_KEY_ID en el .env)
+      - ~/.aws:/home/nodejs/.aws:ro
+    restart: unless-stopped
