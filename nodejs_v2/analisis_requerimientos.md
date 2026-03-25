@@ -12,7 +12,7 @@ El boilerplate proporcionará una arquitectura base robusta, escalable y modular
 
 | ID | Requerimiento | Descripción |
 | :--- | :--- | :--- |
-| **RF-01** | **Estructura Modular** | Implementar una arquitectura limpia (Clean Architecture o Hexagonal) que separe la lógica de negocio de los drivers de AWS. |
+| **RF-01** | **Estructura Modular** | Implementar una arquitectura limpia (Clean Architecture) que separe la lógica de negocio de los drivers de AWS. |
 | **RF-02** | **Módulo de IA Bedrock** | Integración nativa para invocación de Modelos Fundacionales (LLMs) vía AWS Bedrock. |
 | **RF-03** | **Módulo de Visión/OCR** | Wrappers listos para usar con AWS Rekognition (imágenes) y AWS Textract (documentos). |
 | **RF-04** | **Módulo de Audio** | Integración con AWS Polly (TTS) y AWS Transcribe (STT). |
@@ -29,6 +29,6 @@ El boilerplate proporcionará una arquitectura base robusta, escalable y modular
 ## 5. Stack Tecnológico Sugerido
 
 * **Lenguaje:** Node.js v20+ (TypeScript obligatorio).
-* **Framework:** Express.js o Fastify.
+* **Framework:** Express.js.
 * **SDK:** AWS SDK for JavaScript v3 (Modular).
-* **Infraestructura:** AWS CDK o Terraform para el aprovisionamiento de recursos de IA.
+* **Infraestructura:** AWS CDK para el aprovisionamiento de recursos de IA.

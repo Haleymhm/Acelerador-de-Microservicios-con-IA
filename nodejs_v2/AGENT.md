@@ -12,9 +12,9 @@ Proporcionar un boilerplate de microservicios en Node.js (TypeScript) que facili
 
 - **Runtime:** Node.js v20+ (LTS).
 - **Lenguaje:** TypeScript (Tipado estricto).
-- **Framework:** Express.js (o Fastify) con una estructura de **Arquitectura Limpia (Clean Architecture)**.
+- **Framework:** Express.js con una estructura de **Arquitectura Limpia (Clean Architecture)**.
 - **AWS SDK:** Modular v3 (`@aws-sdk/client-bedrock-runtime`, etc.).
-- **Infraestructura:** AWS CDK o Terraform.
+- **Infraestructura:** AWS CDK.
 - **Validación:** Zod para esquemas de entrada y variables de entorno.
 
 ## 🛠️ Reglas de Desarrollo (Instrucciones de Codificación)
