@@ -19,7 +19,7 @@ Proporcionar un boilerplate de microservicios en Node.js (TypeScript) que facili
 
 ## 🛠️ Reglas de Desarrollo (Instrucciones de Codificación)
 
-1. **Separación de Preocupaciones:** - La lógica de AWS debe residir en `/src/infrastructure/aws/services`.
+1. **Separación de Responsabilidades:** - La lógica de AWS debe residir en `/src/infrastructure/aws/services`.
    - La lógica de negocio debe estar en `/src/domain` y `/src/application`.
 2. **Uso del SDK v3:** Siempre usa clientes modulares para reducir el tamaño del bundle. No instales el SDK completo.
 3. **Manejo de Errores:** Implementa un decorador o middleware para capturar excepciones específicas de AWS (ej. `ThrottlingException`, `AccessDeniedException`).

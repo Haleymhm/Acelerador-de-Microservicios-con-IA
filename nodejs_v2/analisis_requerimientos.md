@@ -26,7 +26,7 @@ El boilerplate proporcionará una arquitectura base robusta, escalable y modular
 * **Seguridad:** Implementación de IAM Roles bajo el principio de "menor privilegio".
 * **Developer Experience (DX):** El boilerplate debe incluir documentación clara y comandos CLI (npm scripts) para generación de código.
 
-## 5. Stack Tecnológico Sugerido
+## 5. Stack Tecnológico
 
 * **Lenguaje:** Node.js v20+ (TypeScript obligatorio).
 * **Framework:** Express.js.
